@@ -1,4 +1,5 @@
-import 'package:ecomm_food/home/main_food_page.dart';
+import 'package:ecomm_food/pages/food/food_detail.dart';
+import 'package:ecomm_food/pages/home/main_food_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainFoodPage(),
+      home: FoodDetail(),
     );
   }
 }
