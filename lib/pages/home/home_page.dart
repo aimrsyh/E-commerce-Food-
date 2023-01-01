@@ -1,3 +1,4 @@
+import 'package:ecomm_food/pages/cart/cart_history.dart';
 import 'package:ecomm_food/pages/home/main_food_page.dart';
 import 'package:ecomm_food/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
@@ -25,6 +26,7 @@ class _HomePageState extends State<HomePage> {
         child: Text("Next Page"),
       ),
     ),
+    CartHistory(),
     Container(
       child: Center(
         child: Text("Next next Page"),
