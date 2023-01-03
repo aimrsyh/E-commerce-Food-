@@ -1,3 +1,4 @@
+import 'package:ecomm_food/pages/account/account_page.dart';
 import 'package:ecomm_food/pages/cart/cart_history.dart';
 import 'package:ecomm_food/pages/home/main_food_page.dart';
 import 'package:ecomm_food/utils/colors.dart';
@@ -27,16 +28,7 @@ class _HomePageState extends State<HomePage> {
       ),
     ),
     CartHistory(),
-    Container(
-      child: Center(
-        child: Text("Next next Page"),
-      ),
-    ),
-    Container(
-      child: Center(
-        child: Text("Next next next Page"),
-      ),
-    ),
+    AccountPage(),
   ];
 
   void onTapnav(int index) {
