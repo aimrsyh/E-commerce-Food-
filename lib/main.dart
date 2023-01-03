@@ -1,6 +1,8 @@
 import 'package:ecomm_food/controllers/cart_controller.dart';
 import 'package:ecomm_food/controllers/popular_product_controller.dart';
 import 'package:ecomm_food/controllers/recommended_product_controller.dart';
+import 'package:ecomm_food/pages/auth/sign_in_page.dart';
+import 'package:ecomm_food/pages/auth/sign_up_page.dart';
 import 'package:ecomm_food/pages/food/food_detail.dart';
 import 'package:ecomm_food/pages/food/recommended_food_detail.dart';
 import 'package:ecomm_food/pages/home/food_page_body.dart';
@@ -30,9 +32,12 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
+          home: SignInPage(),
+          //home: SignUpPage(),
+
           //home: SplashScreen(),
-          initialRoute: RouteHelper.splashPage,
-          getPages: RouteHelper.routes,
+          //initialRoute: RouteHelper.splashPage,
+          //getPages: RouteHelper.routes,
         );
       });
     });

@@ -1,4 +1,5 @@
 import 'package:ecomm_food/pages/account/account_page.dart';
+import 'package:ecomm_food/pages/auth/sign_up_page.dart';
 import 'package:ecomm_food/pages/cart/cart_history.dart';
 import 'package:ecomm_food/pages/home/main_food_page.dart';
 import 'package:ecomm_food/utils/colors.dart';
@@ -22,11 +23,7 @@ class _HomePageState extends State<HomePage> {
 
   List pages = [
     MainFoodPage(),
-    Container(
-      child: Center(
-        child: Text("Next Page"),
-      ),
-    ),
+    SignUpPage(),
     CartHistory(),
     AccountPage(),
   ];
