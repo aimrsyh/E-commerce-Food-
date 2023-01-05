@@ -1,4 +1,5 @@
 import 'package:ecomm_food/base/no_data_page.dart';
+import 'package:ecomm_food/controllers/auth_controller.dart';
 import 'package:ecomm_food/controllers/cart_controller.dart';
 import 'package:ecomm_food/controllers/popular_product_controller.dart';
 import 'package:ecomm_food/controllers/recommended_product_controller.dart';
@@ -298,9 +299,13 @@ class CartPage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          //popularProduct.addItem(product);
-                          print("tapped");
-                          cartController.addToHistoryList();
+                          if (Get.find<AuthController>().userLoggedIn()) {
+                            //popularProduct.addItem(product);
+                            //print("tapped");
+                            cartController.addToHistoryList();
+                          } else {
+                            Get.toNamed(RouteHelper.getSignInPage());
+                          }
                         },
                         child: Container(
                           padding: EdgeInsets.only(
