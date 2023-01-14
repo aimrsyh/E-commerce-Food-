@@ -1,4 +1,4 @@
-//import 'package:ecomm_food/data/repository/auth_repo.dart';
+import 'package:ecomm_food/data/repository/auth_repo.dart';
 import 'package:ecomm_food/data/repository/user_repo.dart';
 import 'package:ecomm_food/models/response_model.dart';
 import 'package:ecomm_food/models/user_model.dart';

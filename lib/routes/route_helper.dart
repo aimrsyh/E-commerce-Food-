@@ -1,3 +1,4 @@
+import 'package:ecomm_food/pages/address/add_address_page.dart';
 import 'package:ecomm_food/pages/auth/sign_in_page.dart';
 import 'package:ecomm_food/pages/cart/cart_page.dart';
 import 'package:ecomm_food/pages/food/food_detail.dart';
@@ -16,6 +17,8 @@ class RouteHelper {
   static const String cartPage = "/cart-page";
   static const String signIn = "/sign-in";
 
+  static const String addAddress = "/add-address";
+
   static String getSplashPage() => '$splashPage';
   static String getInitial() => '$initial';
   static String getPopularfood(int pageId, String page) =>
@@ -24,6 +27,7 @@ class RouteHelper {
       '$recommendedFood?pageId=$pageId&page=$page';
   static String getCartPage() => '$cartPage';
   static String getSignInPage() => '$signIn';
+  static String getAddressPage() => '$addAddress';
 
   static List<GetPage> routes = [
     GetPage(name: splashPage, page: () => SplashScreen()),
@@ -31,7 +35,8 @@ class RouteHelper {
         name: initial,
         page: () {
           return HomePage();
-        }),
+        },
+        transition: Transition.fade),
     GetPage(
         name: signIn,
         page: () {
@@ -61,5 +66,10 @@ class RouteHelper {
       },
       transition: Transition.fadeIn,
     ),
+    GetPage(
+        name: addAddress,
+        page: () {
+          return AddAddressPage();
+        })
   ];
 }

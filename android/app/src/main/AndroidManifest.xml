@@ -19,6 +19,7 @@
             <meta-data
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
+               android:value="AIzaSyBqiY09byDBEBWx8QeEIMM49P0rQ2S322E"
               />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

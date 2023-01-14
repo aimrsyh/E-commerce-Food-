@@ -21,26 +21,22 @@ class SignInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var emailController = TextEditingController();
+    var phoneController = TextEditingController();
     var passwordController = TextEditingController();
 
     void _login(AuthController authController) {
-      String email = emailController.text.trim();
+      String phone = phoneController.text.trim();
       String password = passwordController.text.trim();
 
-      if (email.isEmpty) {
-        showCustomSnackBar("Type in your email address",
-            title: "Email address");
-      } else if (!GetUtils.isEmail(email)) {
-        showCustomSnackBar("Type in a valid email address",
-            title: "Valid Email address");
+      if (phone.isEmpty) {
+        showCustomSnackBar("Type in your phone number", title: "Phone");
       } else if (password.isEmpty) {
         showCustomSnackBar("Type in your password", title: "Password");
       } else if (password.length < 6) {
         showCustomSnackBar("Password cannot be less than six character",
             title: "password");
       } else {
-        authController.login(email, password).then((status) {
+        authController.login(phone, password).then((status) {
           if (status.isSuccess) {
             Get.toNamed(RouteHelper.getInitial());
             print("Success login");
@@ -90,7 +86,7 @@ class SignInPage extends StatelessWidget {
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
-                            "Sign into your accunt",
+                            "Sign into your account",
                             style: TextStyle(
                               color: Colors.grey[500],
                               fontSize:
@@ -103,11 +99,11 @@ class SignInPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    //email
+                    //phone
                     AppTextField(
-                        textController: emailController,
-                        hintText: "Email",
-                        icon: Icons.email),
+                        textController: phoneController,
+                        hintText: "Phone",
+                        icon: Icons.phone),
                     SizedBox(
                       height: Dimensions.height20,
                     ),
