@@ -2,6 +2,7 @@ import 'package:ecomm_food/controllers/auth_controller.dart';
 import 'package:ecomm_food/controllers/location_controller.dart';
 import 'package:ecomm_food/controllers/user_controller.dart';
 import 'package:ecomm_food/models/address_model.dart';
+import 'package:ecomm_food/pages/address/pick_address_map.dart';
 import 'package:ecomm_food/routes/route_helper.dart';
 import 'package:ecomm_food/utils/app_constants.dart';
 import 'package:ecomm_food/utils/colors.dart';
@@ -43,6 +44,14 @@ class _AddAddressPageState extends State<AddAddressPage> {
       Get.find<UserController>().getUserInfo();
     }
     if (Get.find<LocationController>().addressList.isNotEmpty) {
+      /*
+      bug fix
+      */
+      if (Get.find<LocationController>().getUserAddressFromLocalStorage() ==
+          "") {
+        Get.find<LocationController>()
+            .saveUserAddress(Get.find<LocationController>().addressList.last);
+      }
       Get.find<LocationController>().getUserAddress();
       _cameraPosition = CameraPosition(
           target: LatLng(
@@ -78,7 +87,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
               '${locationController.placemark.locality ?? ''}'
               '${locationController.placemark.postalCode ?? ''}'
               '${locationController.placemark.country ?? ''}';
-          print("address in my view is" + _addressController.text);
+          print("address in my view is " + _addressController.text);
           return SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,6 +107,15 @@ class _AddAddressPageState extends State<AddAddressPage> {
                           target: _initialPosition,
                           zoom: 17,
                         ),
+                        onTap: (latlng) {
+                          Get.toNamed(RouteHelper.getPickAddressPage(),
+                              arguments: PickAddressMap(
+                                fromsignup: false,
+                                fromAddress: true,
+                                googleMapController:
+                                    locationController.mapController,
+                              ));
+                        },
                         zoomControlsEnabled: false,
                         compassEnabled: false,
                         indoorViewEnabled: true,

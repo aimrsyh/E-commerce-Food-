@@ -9,6 +9,7 @@ import 'package:ecomm_food/pages/home/food_page_body.dart';
 import 'package:ecomm_food/pages/home/main_food_page.dart';
 import 'package:ecomm_food/pages/splash/splash_page.dart';
 import 'package:ecomm_food/routes/route_helper.dart';
+import 'package:ecomm_food/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'helper/dependecies.dart' as dep;
@@ -38,6 +39,10 @@ class MyApp extends StatelessWidget {
           //home: SplashScreen(),
           initialRoute: RouteHelper.splashPage,
           getPages: RouteHelper.routes,
+          theme: ThemeData(
+            primaryColor: AppColors.mainColor,
+            fontFamily: "Lato",
+          ),
         );
       });
     });
