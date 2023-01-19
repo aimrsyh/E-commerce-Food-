@@ -1,5 +1,6 @@
 import 'package:ecomm_food/base/custom_button.dart';
 import 'package:ecomm_food/controllers/location_controller.dart';
+import 'package:ecomm_food/pages/address/widgets/search_location_dialogue.dart';
 import 'package:ecomm_food/routes/route_helper.dart';
 import 'package:ecomm_food/utils/colors.dart';
 import 'package:ecomm_food/utils/dimensions.dart';
@@ -69,6 +70,10 @@ class _PickAddressMapState extends State<PickAddressMap> {
                     Get.find<LocationController>()
                         .updatePosition(_cameraPosition, false);
                   },
+                  onMapCreated: (GoogleMapController mapController) {
+                    _mapController = mapController;
+                    if (!widget.fromAddress) {}
+                  },
                 ),
                 Center(
                   child: !locationController.loading
@@ -79,39 +84,54 @@ class _PickAddressMapState extends State<PickAddressMap> {
                         )
                       : CircularProgressIndicator(),
                 ),
+                /*
+                showing and selecting address
+                */
                 Positioned(
                   top: Dimensions.height45,
                   left: Dimensions.width20,
                   right: Dimensions.width20,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: Dimensions.width10,
-                    ),
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: AppColors.mainColor,
-                      borderRadius:
-                          BorderRadius.circular(Dimensions.radius20 / 2),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.location_on,
-                          size: 25,
-                          color: Colors.white,
-                        ),
-                        Expanded(
-                          child: Text(
-                            '${locationController.pickPlacemark.name ?? ''}',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: Dimensions.font16,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                  child: InkWell(
+                    onTap: () => Get.dialog(
+                        LocationDialogue(mapController: _mapController)),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: Dimensions.width10,
+                      ),
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: AppColors.mainColor,
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius20 / 2),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.location_on,
+                            size: 25,
+                            color: Colors.white,
                           ),
-                        ),
-                      ],
+                          Expanded(
+                            child: Text(
+                              '${locationController.pickPlacemark.name ?? ''}',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: Dimensions.font16,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          SizedBox(
+                            width: Dimensions.width10,
+                          ),
+                          Icon(
+                            Icons.search,
+                            size: 25,
+                            color: Colors.white,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
