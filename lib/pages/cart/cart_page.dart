@@ -4,6 +4,7 @@ import 'package:ecomm_food/controllers/cart_controller.dart';
 import 'package:ecomm_food/controllers/location_controller.dart';
 import 'package:ecomm_food/controllers/popular_product_controller.dart';
 import 'package:ecomm_food/controllers/recommended_product_controller.dart';
+import 'package:ecomm_food/pages/cart/cart_history.dart';
 import 'package:ecomm_food/pages/home/main_food_page.dart';
 import 'package:ecomm_food/routes/route_helper.dart';
 import 'package:ecomm_food/utils/app_constants.dart';
@@ -59,11 +60,16 @@ class CartPage extends StatelessWidget {
                     iconSize: Dimensions.iconSize24,
                   ),
                 ),
-                AppIcon(
-                  icon: Icons.shopping_cart,
-                  iconColor: Colors.white,
-                  backgroundColor: AppColors.mainColor,
-                  iconSize: Dimensions.iconSize24,
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(RouteHelper.getCartHistoryPage());
+                  },
+                  child: AppIcon(
+                    icon: Icons.shopping_cart,
+                    iconColor: Colors.white,
+                    backgroundColor: AppColors.mainColor,
+                    iconSize: Dimensions.iconSize24,
+                  ),
                 ),
               ],
             ),
@@ -300,18 +306,19 @@ class CartPage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          //popularProduct.addItem(product);
+                          // popularProduct.addItem(product);
                           //print("tapped");
                           if (Get.find<AuthController>().userLoggedIn()) {
-                            if (Get.find<LocationController>()
+                            /*if (Get.find<LocationController>()
                                 .addressList
                                 .isEmpty) {
                               Get.toNamed(RouteHelper.getAddressPage());
                             } else {
                               Get.offNamed(RouteHelper.getInitial());
                             }
+                            */
 
-                            //cartController.addToHistoryList();
+                            cartController.addToHistoryList();
                           } else {
                             Get.toNamed(RouteHelper.getSignInPage());
                           }

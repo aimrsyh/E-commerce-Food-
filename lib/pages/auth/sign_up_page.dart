@@ -3,6 +3,7 @@ import 'package:ecomm_food/base/show_custome_snackbar.dart';
 import 'package:ecomm_food/controllers/auth_controller.dart';
 import 'package:ecomm_food/models/signup_body_model.dart';
 import 'package:ecomm_food/pages/home/main_food_page.dart';
+import 'package:ecomm_food/routes/route_helper.dart';
 import 'package:ecomm_food/utils/colors.dart';
 import 'package:ecomm_food/utils/dimensions.dart';
 import 'package:ecomm_food/widgets/app_text_field.dart';
@@ -123,6 +124,7 @@ class SignUpPage extends StatelessWidget {
                     GestureDetector(
                       onTap: () {
                         _registration(_authController);
+                        Get.toNamed(RouteHelper.getSignInPage());
                       },
                       child: Container(
                         width: Dimensions.screenWidth / 2,

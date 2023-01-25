@@ -1,6 +1,7 @@
 import 'package:ecomm_food/pages/address/add_address_page.dart';
 import 'package:ecomm_food/pages/address/pick_address_map.dart';
 import 'package:ecomm_food/pages/auth/sign_in_page.dart';
+import 'package:ecomm_food/pages/cart/cart_history.dart';
 import 'package:ecomm_food/pages/cart/cart_page.dart';
 import 'package:ecomm_food/pages/food/food_detail.dart';
 import 'package:ecomm_food/pages/food/recommended_food_detail.dart';
@@ -16,6 +17,7 @@ class RouteHelper {
   static const String popularFood = "/popular-food";
   static const String recommendedFood = "/recommended-food";
   static const String cartPage = "/cart-page";
+  static const String cartHistoryPage = "/cart-history-page";
   static const String signIn = "/sign-in";
 
   static const String addAddress = "/add-address";
@@ -28,6 +30,7 @@ class RouteHelper {
   static String getRecommendedfood(int pageId, String page) =>
       '$recommendedFood?pageId=$pageId&page=$page';
   static String getCartPage() => '$cartPage';
+  static String getCartHistoryPage() => '$cartHistoryPage';
   static String getSignInPage() => '$signIn';
   static String getAddressPage() => '$addAddress';
   static String getPickAddressPage() => '$pickAddressMap';
@@ -72,6 +75,13 @@ class RouteHelper {
       name: cartPage,
       page: () {
         return CartPage();
+      },
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name: cartHistoryPage,
+      page: () {
+        return CartHistory();
       },
       transition: Transition.fadeIn,
     ),

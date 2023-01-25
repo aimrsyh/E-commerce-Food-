@@ -24,9 +24,10 @@ class _HomePageState extends State<HomePage> {
 
   List pages = [
     MainFoodPage(),
-    Container(
+    /*Container(
       child: Text("History Page"),
     ),
+    */
     CartHistory(),
     AccountPage(),
   ];
@@ -46,11 +47,12 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _buildScreens() {
     return [
       MainFoodPage(),
-      Container(
+      /*Container(
         child: Center(
           child: Text("Next Page"),
         ),
       ),
+      */
       Container(
         child: Center(
           child: Text("Next next Page"),
@@ -111,10 +113,10 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.home_outlined),
             label: 'Home',
           ),
-          BottomNavigationBarItem(
+          /*BottomNavigationBarItem(
             icon: Icon(Icons.archive),
             label: 'Archieve',
-          ),
+          ),*/
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
             label: 'Cart',
