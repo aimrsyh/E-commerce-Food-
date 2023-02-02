@@ -2,23 +2,23 @@
 
 ## Sign In & Sign Up Page
 
-<img src="screenshot/1.png" width="30%" height="30%"> 
+<img src="screenshot/1.png" width="70%" height="70%"> 
 
 ## Food List & Food Details Page
 
-<img src="screenshot/2.png" width="30%" height="30%"> 
+<img src="screenshot/2.png" width="70%" height="70%"> 
 
 ## Cart List & Cart History Page
 
-<img src="screenshot/3.png" width="30%" height="30%"> 
+<img src="screenshot/3.png" width="70%" height="70%"> 
 
 ## Address & Maps Page
 
-<img src="screenshot/4.png" width="30%" height="30%"> 
+<img src="screenshot/4.png" width="70%" height="70%"> 
 
 ## Profile Page
 
-<img src="screenshot/5.png" width="30%" height="30%"> 
+<img src="screenshot/5.png" width="70%" height="70%"> 
 
 A few resources to get you started if this is your first Flutter project:
 
