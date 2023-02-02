@@ -1,10 +1,24 @@
-# ecomm_food
+# Flutter E-commerce (Food)
 
-A new Flutter project.
+## Sign In & Sign Up Page
 
-## Getting Started
+<img src="screenshot/1.png" width="30%" height="30%"> 
 
-This project is a starting point for a Flutter application.
+## Food List & Food Details Page
+
+<img src="screenshot/2.png" width="30%" height="30%"> 
+
+## Cart List & Cart History Page
+
+<img src="screenshot/3.png" width="30%" height="30%"> 
+
+## Address & Maps Page
+
+<img src="screenshot/4.png" width="30%" height="30%"> 
+
+## Profile Page
+
+<img src="screenshot/5.png" width="30%" height="30%"> 
 
 A few resources to get you started if this is your first Flutter project:
 
